@@ -1,0 +1,135 @@
+.product {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: #fff;
+  min-height: 243px;
+  position: relative;
+}
+
+.product_image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.product_price {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  margin-bottom: 4px;
+}
+
+.product_title {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 130%;
+  margin-bottom: 4px;
+  flex-grow: 1;
+}
+
+.product_detail {
+  outline: none;
+}
+
+.product_detail:focus-visible,
+.product_detail:hover {
+  color: #f86310;
+}
+
+@supports not selector(::focus-visible) {
+  .product_detail:focus {
+    background-color: #f86310;
+  }
+}
+
+.product_detail:after {
+  content: "";
+  pointer-events: none;
+  inset: 0;
+  position: absolute;
+  outline: 1px solid transparent;
+  border-radius: 12px;
+}
+
+.product_detail:focus-visible:after  {
+outline-color: #f86310;
+}
+
+.product_weight {
+  color: #b1b1b1;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+  margin-bottom: 7px;
+}
+
+.product_add {
+  border-radius: 8px;
+  background: #f2f2f3;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  padding: 9px;
+  transition: transform 0.1s ease, background-color 0.3s ease-in-out;
+}
+
+.product_add:hover {
+  background-color: #ffab08;
+}
+
+.product_add:focus-visible {
+  background-color: #f86310;
+}
+
+.product_add:active {
+  transform: translate(1px 2px);
+}
+
+.product_add:disabled {
+  background-color: #f9f9f9;
+  color: #acacac;
+}
+
+@supports not selector(::focus-visible) {
+  .product_add:focus {
+    background-color: #f86310;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product {
+    padding: 12px;
+    border-radius: 18px;
+    min-height: 411px;
+  }
+
+  .product_image {
+    height: 220px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  .product_price {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .product_title {
+    font-size: 16px;
+  }
+
+  .product_weight {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .product_add {
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
